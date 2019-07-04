@@ -1,19 +1,27 @@
 
 const calculateDistancePoints = (distance, hillsize, kPoint) => {
-    const meterDiff = (distance - kPoint)
-    switch (hillsize) {
-        case 'normalna':
-            return 60 + (meterDiff * 2)
-        case 'duża':
-            return 60 + (meterDiff * 1.8)
-        case 'mamucia':
-            return 120 + (meterDiff * 1.2)
-        default:
-            console.log('wpisz poprawną wielkość skoczni')
-            break;
+    if(!distance || !hillsize || !kPoint){
+        return 'Insert all values'
+    }else if(isNaN(parseInt(distance))){
+        return 'Write correct distance'
+    }else if(isNaN(parseInt(kPoint))){
+        return 'Write correct kPoint'
+    }else{
+        const meterDiff = (distance - kPoint)
+        switch (hillsize) {
+            case 'normal':
+                return 60 + (meterDiff * 2)
+            case 'large':
+                return 60 + (meterDiff * 1.8)
+            case 'flying':
+                return 120 + (meterDiff * 1.2)
+            default:
+                return 'Insert valid hill size'
+        }
     }
+    
 }
 
-// console.log(calculateDistancePoints(91.5, 'normalna', 98))
+console.log(calculateDistancePoints('a', 'normal', 98))
 
 module.exports = calculateDistancePoints;
