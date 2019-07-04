@@ -19,9 +19,6 @@ const calculateDistancePoints = (distance, hillsize, kPoint) => {
                 return 'Insert valid hill size'
         }
     }
-    
 }
-
-console.log(calculateDistancePoints('a', 'normal', 98))
 
 module.exports = calculateDistancePoints;
