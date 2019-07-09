@@ -20,14 +20,14 @@ describe('calculate style points', () => {
     it('should throw error when number of notes is incorrect', () => {
         const actual = calculateStylePoints([19, 19, 19, 19]);
 
-        const expected = 'There should be five notes';
+        const expected = null;
 
         assert.equal(actual, expected);
     });
     it('should throw error when notes are not numbers', () => {
         const actual = calculateStylePoints([19, 19, 19, 19, 'a']);
 
-        const expected = 'Notes should be numbers only';
+        const expected = null;
 
         assert.equal(actual, expected);
     });

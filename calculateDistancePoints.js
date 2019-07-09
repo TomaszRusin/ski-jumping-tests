@@ -1,11 +1,16 @@
 
-const calculateDistancePoints = (distance, hillsize, kPoint) => {
+const calculateDistancePoints = (sourceDistance, hillsize, sourcekPoint) => {
+    const distance = parseInt(sourceDistance);
+    const kPoint = parseInt(sourcekPoint);
+
     if(!distance || !hillsize || !kPoint){
-        return 'Insert all values';
-    }else if(isNaN(parseInt(distance))){
-        return 'Write correct distance';
-    }else if(isNaN(parseInt(kPoint))){
-        return 'Write correct kPoint';
+        console.log('Insert all values') 
+    }else if(isNaN(distance)){
+        console.log('Write correct distance') 
+        return null;
+    }else if(isNaN(kPoint)){
+        console.log('Write correct kPoint') 
+        return null;
     }else{
         const meterDiff = (distance - kPoint)
         switch (hillsize) {
@@ -17,7 +22,8 @@ const calculateDistancePoints = (distance, hillsize, kPoint) => {
                 return Math.round( (120 + (meterDiff * 1.2)) * 10 ) / 10;
                 
             default:
-                return 'Insert valid hill size';
+                console.log('Insert valid hill size') 
+                return null;
         }
     }
 }

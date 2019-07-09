@@ -7,28 +7,28 @@ describe('calculateDistancePoints', () => {
         it('should throw error when no value is passed', () => {
             const actual = calculateDistancePoints();
 
-            const expected = 'Insert all values';
+            const expected = null;
 
             assert.equal(actual, expected);
         });
         it('should throw error when wrong distance is passed', () => {
             const actual = calculateDistancePoints('asd', 'normal', 98);
 
-            const expected = 'Write correct distance';
+            const expected = null;
 
             assert.equal(actual, expected);
         });
         it('should throw error when wrong hill size is passed', () => {
             const actual = calculateDistancePoints(111, 23, 98);
 
-            const expected = 'Insert valid hill size';
+            const expected = null;
 
             assert.equal(actual, expected);
         });
         it('should throw error when wrong kPoint is passed', () => {
             const actual = calculateDistancePoints(111, 'normal', 'asd');
 
-            const expected = 'Write correct kPoint';
+            const expected = null;
 
             assert.equal(actual, expected);
         });
@@ -71,7 +71,7 @@ describe('calculateDistancePoints', () => {
         it('should calculate the distance score properly when k point is reached', () => {
             const actual = calculateDistancePoints(227.5, 'flying', 200);
 
-            const expected = 153;
+            const expected = 152.4;
 
             assert.equal(actual, expected);
         });

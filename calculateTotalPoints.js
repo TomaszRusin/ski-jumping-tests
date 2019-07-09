@@ -16,9 +16,11 @@ const calculateTotalPoints = (
     }else if(isNaN(stylePoints)){
         return stylePoints;
     }else if(isNaN(windFactor)){
-        return 'Wind factor should be expressed as a number';
+        console.log('Wind factor should be expressed as a number')
+        return null;
     }else if(isNaN(gateFactor)){
-        return 'Gate factor should be expressed as a number';
+        console.log('Gate factor should be expressed as a number')
+        return null;
     }else{
         return Math.round( (distancePoints + stylePoints + windFactor + gateFactor) * 10 ) / 10;
     };

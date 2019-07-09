@@ -27,7 +27,7 @@ describe('calculateTotalPoints', () => {
                 -14.4
             );
 
-        const expected = 'Wind factor should be expressed as a number';
+        const expected = null;
 
         assert.equal(actual, expected);
     });
@@ -41,7 +41,7 @@ describe('calculateTotalPoints', () => {
                 'abc'
              );
 
-        const expected = 'Gate factor should be expressed as a number';
+        const expected = null;
 
         assert.equal(actual, expected);
     });
